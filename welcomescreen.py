@@ -1,70 +1,21 @@
 import streamlit as st
-import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import streamlit as st
 
-export default function WelcomeScreen({ navigation }) {
-  return (
-    <View style={styles.container}>
-      <View style={styles.content}>
-        <Image
-          source={require(C:/Users/User/Desktop/Rupa Sree/expense_Tracker_Image.png)} // your logo image
-          style={styles.logo}
-        />
+st.set_page_config(page_title="Smart Expense", layout="centered")
 
-        <Text style={styles.title}>Smart Expense</Text>
-        <Text style={styles.subtitle}>
-          Track your spending.{"\n"}Grow your savings.
-        </Text>
+# Center content
+st.markdown("""
+    <div style="text-align: center; padding-top: 50px;">
+        <img src="https://cdn-icons-png.flaticon.com/512/2331/2331949.png" 
+             width="100" style="margin-bottom: 20px;" />
 
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => navigation.navigate("Home")}
-        >
-          <Text style={styles.buttonText}>Get Started</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
-  );
-}
+        <h1 style="color:#2C3E50; font-size: 40px;">Smart Expense</h1>
+        <p style="font-size:18px; color:#555;">
+            Track your spending.<br>Grow your savings.
+        </p>
+    </div>
+""", unsafe_allow_html=True)
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#D6EDFF',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  content: {
-    alignItems: 'center',
-  },
-  logo: {
-    width: 90,
-    height: 90,
-    marginBottom: 25,
-  },
-  title: {
-    fontSize: 28,
-    fontWeight: '700',
-    color: '#2C3E50',
-  },
-  subtitle: {
-    fontSize: 16,
-    color: '#4A4A4A',
-    textAlign: 'center',
-    marginVertical: 15,
-    lineHeight: 22,
-  },
-  button: {
-    backgroundColor: '#2E86DE',
-    paddingVertical: 12,
-    paddingHorizontal: 40,
-    borderRadius: 50,
-    marginTop: 20,
-    elevation: 3,
-  },
-  buttonText: {
-    color: 'white',
-    fontSize: 18,
-    fontWeight: '600',
-  },
-});
+# Button
+if st.button("Get Started"):
+    st.switch_page("pages/home_dashboard.py")
