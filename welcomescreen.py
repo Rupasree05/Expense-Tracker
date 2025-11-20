@@ -3,7 +3,7 @@ import streamlit as st
 st.set_page_config(page_title="Smart Expense", layout="centered")
 
 # Show your custom image
-st.image("C:/Users/User/Desktop/Rupa Sree/expense_Tracker_Image.png")
+st.image("C:/UsersUser/Desktop/generated-image.png")
 
 # Text content
 st.markdown("""
